@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer sathi</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+</head>
+<body>
+    <header>
+        <div class="logo_container">
+            <a href="#"><img class="myntra_home" src="logofarmer.jpg" alt="Myntra Home"></a>
+        </div>
+        <nav class="nav_bar">
+            <a href="#", onclick="loading(),displayonhome()">Home</a>
+           <a href="#", onclick="loading(),men()"></a>
+            <a href="#", onclick="loading(),women()">Market Trend</a>
+            <a href="#", onclick="loading(),home()">Weather</a>
+            <a href="#", onclick="loading(), beauty()">Contact Us</a>
+            <!-- <a href="#">Studio <sup>New</sup></a> -->
+        </nav>
+        <div class="search_bar">
+            <!-- //for search icon -->
+            <span class="material-symbols-outlined search_icon">search</span>
+            <input class="search_input" placeholder="Search for your queries">
+        </div>
+        <div class="action_bar">
+            <div class="action_container">
+                <span class="material-symbols-outlined action_icon">person</span>
+                <span class="action_name">Profile</span>
+            </div>
+
+           <!-- <a class= "action_container"href="wish.html"> <div class="action_container">
+            <span class="material-symbols-outlined action_icon">favorite</span>
+            <span class="action_name">Wishlist</span>
+            <span class="wishcount">0</span>
+        </div></a>
+
+            <a class="action_container" href="bag.html">
+                <span class="material-symbols-outlined action_icon">shopping_bag</span>
+                <span class="action_name">Bag</span>
+                <!-- <span class="bagcount">0</span> -->
+            <!-- </a> -->
+        </div>
+    </header>
+    <main>
+        <div class="chat-container">
+            <div class="chat-header">Chatbot</div>
+            <div class="chat-messages" id="chat-messages">
+              <div class="message bot-message">Hello! How can I help you today?</div>
+            </div>
+            <div class="chat-input">
+              <input type="text" id="user-input" placeholder="Type your message...">
+              <button id="btn" onclick="sendMessage()">Send</button>
+            </div>
+          </div>
+    </main>
+</body>
+<script>
+    function sendMessage() {
+  var userInput = document.getElementById("user-input").value;
+  var chatMessages = document.getElementById("chat-messages");
+  
+  if (userInput.trim() !== "") {
+    var userMessage = document.createElement("div");
+    userMessage.classList.add("message", "user-message");
+    userMessage.textContent = userInput;
+    chatMessages.appendChild(userMessage);
+    
+    // Simulate bot response (you can replace this with actual bot logic)
+    var botMessage = document.createElement("div");
+    botMessage.classList.add("message", "bot-message");
+    botMessage.textContent = "Sorry, I'm just a demo bot!";
+    chatMessages.appendChild(botMessage);
+    
+    // Scroll to the bottom of the chat window
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+    // Clear the input field
+    document.getElementById("user-input").value = "";
+  }
+}
+</script>
+</html>
